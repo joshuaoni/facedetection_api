@@ -8,7 +8,6 @@ const signin = require('./controllers/signin');
 const image = require('./controllers/image');
 
 const db = knex({
-  client: 'postgres',
   connection: {
     connectionString: process.env.DATABASE_URL,
     ssl: {
