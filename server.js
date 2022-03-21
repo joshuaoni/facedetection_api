@@ -8,15 +8,17 @@ const signin = require('./controllers/signin');
 const image = require('./controllers/image');
 
 const db = knex({
-    client: 'pg',
-    connection: {
-      connectionString: process.env.DATABASE_URL,
-      // port : 5432,
-      // user : 'crhexybuivwcde',
-      // password : '993be299cd5a24a6818a6086bfb3dbc54f430c5e5ff0c72b11b031ab6dd2eb22',
-      // database : 'd3qbrd2ejuq5j',
-      ssl: true
-    }
+  client: 'pg',
+  connection: {
+    connectionString: process.env.DATABASE_URL,
+    // port : 5432,
+    // user : 'crhexybuivwcde',
+    // password : '993be299cd5a24a6818a6086bfb3dbc54f430c5e5ff0c72b11b031ab6dd2eb22',
+    // database : 'd3qbrd2ejuq5j',
+  },
+  ssl: {
+    rejectUnauthorized: false
+  }
 
 });
 
