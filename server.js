@@ -10,7 +10,7 @@ const image = require('./controllers/image');
 const db = knex({
     client: 'pg',
     connection: {
-      host : '127.0.0.1',
+      host : 'postgresql-reticulated-34806',
       port : 5432,
       user : 'postgres',
       password : 'psql',
@@ -26,7 +26,6 @@ app.use(cors());
 
 // Sign In
 app.post('/', signin.handleSignin(db, bcrypt))
-app.get('/', (req,res)=>{res.send('it is working')})
 // Sign Up
 app.post('/signup', (req, res) => {signup.handleSignup(req, res, db, bcrypt)})
 // Update Entries
