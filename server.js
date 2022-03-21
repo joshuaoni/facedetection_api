@@ -2,13 +2,14 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const cors = require('cors');
 const knex = require('knex');
+const pg = require('pg');
 
 const signup = require('./controllers/signup');
 const signin = require('./controllers/signin');
 const image = require('./controllers/image');
 
 const db = knex({
-  client: 'pg',
+  client: pg,
   connection: {
     connectionString: process.env.DATABASE_URL,
     // port : 5432,
