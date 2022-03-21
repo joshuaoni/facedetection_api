@@ -2,25 +2,24 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const cors = require('cors');
 const knex = require('knex');
-const pg = require('pg');
 
 const signup = require('./controllers/signup');
 const signin = require('./controllers/signin');
 const image = require('./controllers/image');
 
 const db = knex({
-  client: pg,
+  client: 'pg',
   connection: {
     connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+    }
+
     // port : 5432,
     // user : 'crhexybuivwcde',
     // password : '993be299cd5a24a6818a6086bfb3dbc54f430c5e5ff0c72b11b031ab6dd2eb22',
     // database : 'd3qbrd2ejuq5j',
-  },
-  ssl: {
-    rejectUnauthorized: false
   }
-
 });
 
 const app = express();
