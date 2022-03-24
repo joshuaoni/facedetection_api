@@ -37,3 +37,12 @@ app.post('/imageurl', (req, res) => {image.handleApiCall(req, res)})
 app.listen(process.env.PORT || 3000, ()=>{
     console.log(`app running on port ${process.env.PORT}`)
 })
+
+
+
+// DEV TOOLS
+// host: '127.0.0.1',
+// user: 'postgres',
+// password: 'psql',
+// database: 'facedetection',
+// port: 5432
